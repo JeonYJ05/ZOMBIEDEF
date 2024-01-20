@@ -11,7 +11,7 @@ namespace YJ.Zombie.Enemy
         public float MaxHealth = 100f;
         public float _currentHealth;
         public Image HealthBar;
-        private bool _isDeath = false;
+        public bool _isDeath = false;
         private EnemyMove _move;
         private CapsuleCollider _colider;
 
@@ -47,7 +47,6 @@ namespace YJ.Zombie.Enemy
         {
             Vector3 CoinSpot = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
             _isDeath = true;
-            // 죽는 애니매이션
             _move.enabled = false;
             _colider.enabled = false;
             DestroyEnemy();
@@ -59,10 +58,7 @@ namespace YJ.Zombie.Enemy
             Destroy(gameObject, 2f);
         }
 
-       // private void Update()
-       // {
-       //     _hpSlider.transform.position = transform.position;
-       // }
+        
     }
     
 }

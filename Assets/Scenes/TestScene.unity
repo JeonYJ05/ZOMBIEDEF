@@ -21438,6 +21438,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1482237125 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7809156735129667260, guid: 0c10ab7cb6bf01b4ba79510472fa68f6, type: 3}
+  m_PrefabInstance: {fileID: 1473585041701276706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1482237134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482237125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fe932c3da63594589d9d50de3b4aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  IsSearch: 0
+  IsAttack: 0
 --- !u!1 &1564941717
 GameObject:
   m_ObjectHideFlags: 0
@@ -21703,6 +21723,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3787220197686024661, guid: 0c10ab7cb6bf01b4ba79510472fa68f6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f32da26ff71a0d04d8b4e03e48020a0f, type: 2}
     - target: {fileID: 3787220197686024747, guid: 0c10ab7cb6bf01b4ba79510472fa68f6, type: 3}
       propertyPath: _coin
       value: 
@@ -21835,4 +21859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1947bb6cdcdd9e4e8f4833eefe2846a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 100
   Money: 100
+  _currentHealth: 0

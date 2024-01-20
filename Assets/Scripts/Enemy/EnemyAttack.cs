@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YJ.Zombie.Enemy;
+using YJ.Zombie.Cha;
+using YJ.Zombie.Status;
 
 namespace YJ.Zombie.Enemy
 {
@@ -10,12 +12,18 @@ namespace YJ.Zombie.Enemy
         [SerializeField] GameObject _player;
         public bool IsSearch;
         public bool IsAttack;
-        private float _attackDelay = 0.5f;
         private EnemyAnimation _animator;
+        private EnemyStatus _enemyStatus;
+        private ChaStatus _chaHp;
+        private float _attackTimer;
+        private float _attackInterval = 2f;
         private void Awake()
         {
             _player = GameObject.FindGameObjectWithTag("Player");
             _animator = GetComponent<EnemyAnimation>();
+            _enemyStatus = GetComponent<EnemyStatus>();
+            _chaHp = GetComponent<ChaStatus>(); 
+
         }
 
         private void Update()
@@ -25,7 +33,16 @@ namespace YJ.Zombie.Enemy
             if (IsSearch)
             {
                 IsAttack = true;
-                Invoke("AttackAni", _attackDelay);
+                _attackTimer += Time.deltaTime;
+                if(_attackTimer >= _attackInterval)
+                {
+                    Attack();
+                    _attackTimer = 0f;
+                }
+            }
+            else if(_enemyStatus._isDeath)
+            {
+                DeathAni();
             }
             else
             {
@@ -38,7 +55,7 @@ namespace YJ.Zombie.Enemy
         {
             float distance = Vector3.Distance(transform.position, _player.transform.position);
 
-            if (distance <= 3)
+            if (distance <= 2)
             {
                 IsSearch = true;
             }
@@ -48,7 +65,22 @@ namespace YJ.Zombie.Enemy
             }
 
         }
-
+        private void Attack()
+        {
+            if (IsAttack)
+            {
+                if (_chaHp == null)
+                {
+                    _chaHp = FindObjectOfType<ChaStatus>();
+                }
+                else if (_chaHp != null)
+                {
+                    AttackAni();
+                    _chaHp._currentHealth -= 10f;
+                    Debug.Log("ÇöÀç HP : " + _chaHp._currentHealth);
+                }
+            }
+        }
         private void AttackAni()
         {
             _animator.PlayAnimation("Z_Attack");
@@ -56,6 +88,10 @@ namespace YJ.Zombie.Enemy
         private void MoveAni()
         {
             _animator.PlayAnimation("Z_Run");
+        }
+        private void DeathAni()
+        {
+            _animator.PlayAnimation("Z_FallingBack");
         }
     }
 }
