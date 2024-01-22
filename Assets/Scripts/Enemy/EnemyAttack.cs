@@ -4,12 +4,15 @@ using UnityEngine;
 using YJ.Zombie.Enemy;
 using YJ.Zombie.Cha;
 using YJ.Zombie.Status;
+using YJ.Zombie.UI;
+using UnityEngine.UI;
 
 namespace YJ.Zombie.Enemy
 {
     public class EnemyAttack : MonoBehaviour
     {
         [SerializeField] GameObject _player;
+        [SerializeField] Slider _healthBar;
         public bool IsSearch;
         public bool IsAttack;
         private EnemyAnimation _animator;
@@ -77,6 +80,7 @@ namespace YJ.Zombie.Enemy
                 {
                     AttackAni();
                     _chaHp._currentHealth -= 10f;
+                    HpSlider.HP -= 10;
                     Debug.Log("ÇöÀç HP : " + _chaHp._currentHealth);
                 }
             }

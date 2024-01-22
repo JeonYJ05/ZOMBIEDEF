@@ -13,6 +13,7 @@ namespace YJ.Zombie.Status
     {
        // [SerializeField] Slider _hpSlider;
         [SerializeField] float MaxHealth = 100;
+        
         public int Money;
         public float _currentHealth;
         
