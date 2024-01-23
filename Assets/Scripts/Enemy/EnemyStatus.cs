@@ -18,7 +18,7 @@ namespace YJ.Zombie.Enemy
 
 
         
-        public float CurrentHealth { get { return _currentHealth; } }
+        public float EnemyCurrentHealth { get { return _currentHealth; } }
 
         private void Start()
         {

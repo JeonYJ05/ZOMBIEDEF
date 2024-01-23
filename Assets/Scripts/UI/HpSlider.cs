@@ -10,16 +10,17 @@ namespace YJ.Zombie.UI
     {
         [SerializeField] Slider _hpBar;
         [SerializeField] Text _text;
+        private ChaStatus _chaHp;
         public static float HP;
-        void Start()
+        void Awake()
         {
+            _chaHp = GetComponent<ChaStatus>();
             _text = GetComponent<Text>();
             _hpBar = GetComponent<Slider>();
-            HP = 100;
+            
         }
-
-        // Update is called once per frame
-        private void UpdateText()
+               
+        private void Update()
         {
             _text.text = "HP : " + HP;
         }

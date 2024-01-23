@@ -13,20 +13,21 @@ namespace YJ.Zombie.Status
     {
        // [SerializeField] Slider _hpSlider;
         [SerializeField] float MaxHealth = 100;
-        
+        public float ChaCurrentHealth;
+        public Image HpBar;
         public int Money;
-        public float _currentHealth;
-        
 
+        public float _chaCurrentHealth { get { return ChaCurrentHealth; } }
         private void Awake()
         {
-            _currentHealth = MaxHealth;
-         //   _hpSlider.maxValue = MaxHealth;
+            ChaCurrentHealth = MaxHealth;
+            //HpBar.fillAmount = ChaCurrentHealth/MaxHealth;
             Money = 0;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
+            HpBar.fillAmount = ChaCurrentHealth / MaxHealth;
             Money = UIGold.Gold;
         }
 

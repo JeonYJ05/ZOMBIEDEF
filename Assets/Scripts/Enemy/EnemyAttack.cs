@@ -79,9 +79,8 @@ namespace YJ.Zombie.Enemy
                 else if (_chaHp != null)
                 {
                     AttackAni();
-                    _chaHp._currentHealth -= 10f;
-                    HpSlider.HP -= 10;
-                    Debug.Log("현재 HP : " + _chaHp._currentHealth);
+                    _chaHp.ChaCurrentHealth -= 10f;
+                    Debug.Log("현재 HP : " + _chaHp.ChaCurrentHealth);
                 }
             }
         }
