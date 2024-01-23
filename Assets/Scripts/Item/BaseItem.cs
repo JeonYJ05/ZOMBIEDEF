@@ -12,11 +12,12 @@ namespace YJ.Zombie.Item
     public enum ItemType
     {
         Money =0,
+        Potion,
         Weapon
     }
     public abstract class BaseItem : MonoBehaviour
     {
-        [SerializeField] float _speed = 2.0f;
+        private float _speed = 150f;
         private Vector3 _axis = Vector3.up;
 
        public abstract ItemType ItemType { get; }

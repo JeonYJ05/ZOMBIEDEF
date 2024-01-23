@@ -8,12 +8,15 @@ namespace YJ.Zombie.Enemy
     public class EnemyStatus : MonoBehaviour
     {
         [SerializeField] Transform _coin;
+        [SerializeField] Transform _potion;
+
         public float MaxHealth = 100f;
         public float _currentHealth;
         public Image HealthBar;
         public bool _isDeath = false;
         private EnemyMove _move;
         private CapsuleCollider _colider;
+        private int _dropP;
 
 
 
@@ -45,12 +48,12 @@ namespace YJ.Zombie.Enemy
 
         public void Death()
         {
-            Vector3 CoinSpot = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
             _isDeath = true;
             _move.enabled = false;
             _colider.enabled = false;
+            ItemDrop();
             DestroyEnemy();
-            Instantiate(_coin, CoinSpot , Quaternion.identity, null);
+            
         }
 
         private void DestroyEnemy()
@@ -58,7 +61,19 @@ namespace YJ.Zombie.Enemy
             Destroy(gameObject, 2f);
         }
 
-        
+        public void ItemDrop()
+        {
+            Vector3 DropSpot = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+            _dropP = Random.Range(0, 2);
+            if(_dropP == 0)
+            {
+                Instantiate(_potion, DropSpot, Quaternion.identity, null);
+            }
+            if(_dropP == 1)
+            {
+                Instantiate(_coin, DropSpot, Quaternion.identity, null);
+            }
+        }
     }
     
 }

@@ -1814,6 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coin: {fileID: 5231184784680647676, guid: 89adbb47d4f635348abfe631aa6bbdd2, type: 3}
+  _potion: {fileID: 1491733307188329092, guid: 898eac3f0bd7b1a4c87d644dc1ec13c3, type: 3}
   MaxHealth: 100
   _currentHealth: 0
   HealthBar: {fileID: 173452185782002028}
@@ -3372,6 +3373,18 @@ PrefabInstance:
       value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3381,7 +3394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.91
+      value: 0.909994
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3389,23 +3402,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.54999924
+      value: 0.55000305
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.65
+      value: 5.6499977
       objectReference: {fileID: 0}
     - target: {fileID: 5241511489157890843, guid: e9bc34e57bc54a84ab20b5a7a6047956, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
