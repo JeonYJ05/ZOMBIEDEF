@@ -9,6 +9,7 @@ namespace YJ.Zombie.Enemy
     {
         [SerializeField] Transform _coin;
         [SerializeField] Transform _potion;
+        [SerializeField] Transform _key;
 
         public float MaxHealth = 100f;
         public float _currentHealth;
@@ -65,14 +66,19 @@ namespace YJ.Zombie.Enemy
         {
             Vector3 DropSpot = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
             _dropP = Random.Range(0, 2);
-            if(_dropP == 0)
+            if (_dropP == 0)
             {
                 Instantiate(_potion, DropSpot, Quaternion.identity, null);
             }
-            if(_dropP == 1)
+           // if (_dropP == 1)
+           // {
+           //     Instantiate(_coin, DropSpot, Quaternion.identity, null);
+           // }
+            if (_dropP == 1)
             {
-                Instantiate(_coin, DropSpot, Quaternion.identity, null);
+                Instantiate(_key, DropSpot, Quaternion.identity, null);
             }
+
         }
     }
     

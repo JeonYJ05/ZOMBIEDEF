@@ -57,9 +57,9 @@ namespace YJ.Zombie.Cha
         private void CreateBullet()
         {
             Bullet instance = Instantiate(CurrentBlueprint, _shootPoint.position, Quaternion.identity, null);
-            float damage = 10;
             
-            instance.Create(damage, Range, _shootPoint.right);
+            
+            instance.Create(Damage, Range, _shootPoint.right);
 
         }
 

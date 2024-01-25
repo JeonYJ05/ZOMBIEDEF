@@ -6,7 +6,7 @@ namespace YJ.Zombie.Bullets
 {
     public class Bullet : MonoBehaviour
     {
-        protected float Damage = 10f;
+        protected float Damage = 100f;
         protected float Range = 0;
         protected float Speed = 5.0f;
         private Vector3 _position;

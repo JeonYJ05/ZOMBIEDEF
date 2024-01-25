@@ -13,6 +13,7 @@ namespace YJ.Zombie.Item
     {
         Money =0,
         Potion,
+        Key,
         Weapon
     }
     public abstract class BaseItem : MonoBehaviour
