@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-namespace YJ.Zombie.Enemy
+// enemis·Î ¼öÁ¤ 
+namespace YJ.Zombie.Enemy 
 {
     public class EnemyStatus : MonoBehaviour
     {
@@ -29,7 +29,6 @@ namespace YJ.Zombie.Enemy
             _move = GetComponent<EnemyMove>();
             _colider = GetComponent<CapsuleCollider>();
             _currentHealth = MaxHealth;
-            
         }
 
         public void TakeDamage(float damage)
@@ -65,16 +64,16 @@ namespace YJ.Zombie.Enemy
         public void ItemDrop()
         {
             Vector3 DropSpot = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
-            _dropP = Random.Range(0, 2);
+            _dropP = Random.Range(0, 3);
             if (_dropP == 0)
             {
                 Instantiate(_potion, DropSpot, Quaternion.identity, null);
             }
-           // if (_dropP == 1)
-           // {
-           //     Instantiate(_coin, DropSpot, Quaternion.identity, null);
-           // }
             if (_dropP == 1)
+            {
+                Instantiate(_coin, DropSpot, Quaternion.identity, null);
+            }
+            if (_dropP == 2)
             {
                 Instantiate(_key, DropSpot, Quaternion.identity, null);
             }

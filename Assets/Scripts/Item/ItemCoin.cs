@@ -7,7 +7,7 @@ using UnityEngine;
 using YJ.Zombie.Status;
 using YJ.Zombie.UI;
 
-namespace YJ.Zombie.Item
+namespace YJ.Zombie.Items
 {
     public class ItemCoin : BaseItem
     {

@@ -21,7 +21,6 @@ namespace YJ.Zombie.Enemy
         private void Start()
         {
             GetComponent<EnemyAnimation>().PlayAnimation("Z_Run");
-
             StartCoroutine(UpdateDestinationPosition());
         }
 

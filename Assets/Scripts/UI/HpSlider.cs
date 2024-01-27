@@ -12,12 +12,12 @@ namespace YJ.Zombie.UI
         [SerializeField] Text _text;
         private ChaStatus _chaHp;
         public static float HP;
+
         void Awake()
         {
             _chaHp = GetComponent<ChaStatus>();
             _text = GetComponent<Text>();
             _hpBar = GetComponent<Slider>();
-            
         }
                
         private void Update()

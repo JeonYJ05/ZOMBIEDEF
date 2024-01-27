@@ -26,7 +26,6 @@ namespace YJ.Zombie.Enemy
             _animator = GetComponent<EnemyAnimation>();
             _enemyStatus = GetComponent<EnemyStatus>();
             _chaHp = GetComponent<ChaStatus>(); 
-
         }
 
         private void Update()
@@ -57,16 +56,16 @@ namespace YJ.Zombie.Enemy
         public void Search()
         {
             float distance = Vector3.Distance(transform.position, _player.transform.position);
-
-            if (distance <= 2)
-            {
-                IsSearch = true;
-            }
-            else
-            {
-                IsSearch = false;
-            }
-
+            IsSearch = distance <= 2;
+         //   삼항연산자 줄임   
+         //   if (distance <= 2  )
+         //   {
+         //       IsSearch = true;
+         //   }
+         //   else
+         //   {
+         //       IsSearch = false;
+         //   }
         }
         private void Attack()
         {

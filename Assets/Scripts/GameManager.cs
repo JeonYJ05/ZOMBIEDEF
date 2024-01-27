@@ -9,12 +9,16 @@ namespace YJ.Zombie.GameManage
 {
     public class GameManager : MonoBehaviour
     {
+        [Header("Mission Spot")]
         [SerializeField] GameObject _spotEffect;
         [SerializeField] Transform _spot;
+        private GameObject Spot;
+
+        [Header("Menu")]
         public GameObject Ui;
         public static int GetKey;
 
-
+        // 유니티 싱글톤화 GameManager
         public int getKey { get { return GetKey; } }
 
         public void Awake()
@@ -23,6 +27,8 @@ namespace YJ.Zombie.GameManage
         }
         private void Update()
         {
+            Mission();    
+
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 Toggle();
@@ -31,9 +37,9 @@ namespace YJ.Zombie.GameManage
 
         public void Mission()
         {
-            if(GetKey > 4)
+            if (GetKey >= 5 && Spot == null)
             {
-                Instantiate(_spotEffect, _spot.position, _spot.rotation);
+                Spot = (GameObject)Instantiate(_spotEffect, _spot.position, _spot.rotation);
             }
         }
 

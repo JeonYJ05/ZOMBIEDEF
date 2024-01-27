@@ -6,7 +6,7 @@ using Unity.AI.Navigation.Samples;
 using UnityEditor;
 using UnityEngine;
 
-namespace YJ.Zombie.Item
+namespace YJ.Zombie.Items
 {
 
     public enum ItemType
@@ -45,6 +45,7 @@ namespace YJ.Zombie.Item
             Vector3 axis = _axis * spin;
             transform.Rotate(axis);
         }
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player"))

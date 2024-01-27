@@ -7,7 +7,7 @@ using UnityEngine;
 using YJ.Zombie.Cha;
 using YJ.Zombie.Status;
 
-namespace YJ.Zombie.Item
+namespace YJ.Zombie.Items
 {
     public class ItemPotion : BaseItem
     {

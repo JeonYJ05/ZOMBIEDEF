@@ -27,7 +27,7 @@ namespace YJ.Zombie.Bullets
         {
             Vector3 move = Speed * Time.deltaTime * Vector3.forward;
             transform.Translate(move);
-            Invoke("DestroyBullet", 5f);
+            Invoke(nameof(DestroyBullet), 5f);
         }
 
         private void DestroyBullet()
