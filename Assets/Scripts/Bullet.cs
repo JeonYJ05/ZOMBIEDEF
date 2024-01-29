@@ -39,7 +39,8 @@ namespace YJ.Zombie.Bullets
         {
             if(other.TryGetComponent<EnemyStatus>(out EnemyStatus enemy))
             {
-                enemy.TakeDamage(Damage);
+                enemy.TakeDamage(Damage, "SmallZombie");
+                enemy.TakeDamage(Damage, "MiddleZombie");
             }
             DestroyBullet();
         }

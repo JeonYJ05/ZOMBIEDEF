@@ -9,8 +9,10 @@ namespace YJ.Zombie.Enemy
         public Transform[] ResponeSpot;
         public int SpawnCycle;
         public GameObject Enemy;
+        private EnemyStatus _enemyStatus;
         void Start()
         {
+            _enemyStatus = GetComponent<EnemyStatus>();
             InvokeRepeating("SpawnEnemy", 0f, SpawnCycle);
         }
 
@@ -18,7 +20,12 @@ namespace YJ.Zombie.Enemy
         {
             for (int i = 0; i < ResponeSpot.Length; i++)
             {
-                Instantiate(Enemy, ResponeSpot[i].position, ResponeSpot[i].rotation);
+                Zombie smallZombie = _enemyStatus.Zombies["SmallZombie"];
+                
+                GameObject SpawnedSmall = Instantiate(Enemy, ResponeSpot[i].position, ResponeSpot[i].rotation);
+                EnemyStatus SmallStatus = SpawnedSmall.GetComponent<EnemyStatus>();
+                SmallStatus.MaxHealth = smallZombie.MaxHealth;
+                SmallStatus.Damage = smallZombie.Damage;
             }
         }
     }

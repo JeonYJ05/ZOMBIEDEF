@@ -18,6 +18,7 @@ namespace YJ.Zombie.Enemy
         private EnemyAnimation _animator;
         private EnemyStatus _enemyStatus;
         private ChaStatus _chaHp;
+        private Zombie _zombie;
         private float _attackTimer;
         private float _attackInterval = 2f;
         private void Awake()
@@ -25,7 +26,8 @@ namespace YJ.Zombie.Enemy
             _player = GameObject.FindGameObjectWithTag("Player");
             _animator = GetComponent<EnemyAnimation>();
             _enemyStatus = GetComponent<EnemyStatus>();
-            _chaHp = GetComponent<ChaStatus>(); 
+            _chaHp = GetComponent<ChaStatus>();
+            _zombie = GetComponent<Zombie>();
         }
 
         private void Update()
