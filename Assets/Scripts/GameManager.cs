@@ -9,6 +9,8 @@ namespace YJ.Zombie.GameManage
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager Instance;
+
         [Header("Mission Spot")]
         [SerializeField] GameObject _spotEffect;
         [SerializeField] Transform _spot;
@@ -23,6 +25,12 @@ namespace YJ.Zombie.GameManage
 
         public void Awake()
         {
+            if (Instance != null)
+            {
+                return;
+            }
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
             GetKey = 0;
         }
         private void Update()
