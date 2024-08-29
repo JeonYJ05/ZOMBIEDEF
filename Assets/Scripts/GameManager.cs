@@ -17,7 +17,7 @@ namespace YJ.Zombie.GameManage
         private GameObject Spot;
 
         [Header("Menu")]
-        public GameObject Ui;
+        public GameObject MainUi;
         public static int GetKey;
 
         // 유니티 싱글톤화 GameManager
@@ -45,17 +45,17 @@ namespace YJ.Zombie.GameManage
 
         public void Mission()
         {
-            if (GetKey >= 5 && Spot == null)
+            if (GetKey >= 5 && !_spotEffect.activeSelf)
             {
-                Spot = (GameObject)Instantiate(_spotEffect, _spot.position, _spot.rotation);
+                _spotEffect.SetActive(true);
             }
         }
 
         public void Toggle()
         {
-            Ui.SetActive(!Ui.activeSelf);
+            MainUi.SetActive(!MainUi.activeSelf);
             
-            if(Ui.activeSelf)
+            if(MainUi.activeSelf)
             {
                 Time.timeScale = 0f;
             }

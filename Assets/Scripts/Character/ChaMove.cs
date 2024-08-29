@@ -22,17 +22,17 @@ namespace YJ.Zombie.Cha
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
-            
-            Move(h ,v);
+
+            Move(h, v);
             Rotate();
         }
 
-        private void Move(float h , float v)
+        private void Move(float h, float v)
         {
             Vector3 movement = new(h, 0, v);
-            movement =  _speed* Time.deltaTime* movement.normalized;
+            movement = _speed * Time.deltaTime * movement.normalized;
             _rigidbody.MovePosition(transform.position + movement);
-            if(movement.magnitude > 0)
+            if (movement.magnitude > 0)
             {
                 anim.SetBool("Run", true);
             }
